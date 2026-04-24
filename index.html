@@ -26,10 +26,27 @@
 
     body {
       font-family: 'DM Sans', sans-serif;
-      background: var(--navy);
+      background-color: var(--navy);
+      background-image: url('images/bg_2.png');
+      background-size: cover;
+      background-position: center top;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
       color: var(--white);
       overflow-x: hidden;
     }
+
+    /* Dark overlay on body so background is very subtle across all sections */
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background: rgba(13,13,20,0.78);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Make sure all content sits above the overlay */
+    nav, section, footer { position: relative; z-index: 1; }
 
     /* ── SCROLLBAR ── */
     ::-webkit-scrollbar { width: 4px; }
@@ -111,12 +128,34 @@
 
     .hero-inner {
       display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 60px;
+      grid-template-columns: 1fr 480px;
+      gap: 40px;
       align-items: center;
       width: 100%;
       position: relative;
       z-index: 1;
+    }
+
+    .hero-right-img {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+
+    .hero-right-img img {
+      width: 100%;
+      max-height: 85vh;
+      object-fit: contain;
+      object-position: right bottom;
+      display: block;
+      filter: drop-shadow(0 20px 60px rgba(206,17,38,0.15));
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-right-img { display: none; }
     }
 
     .hero-photo-wrap {
@@ -191,8 +230,7 @@
     }
 
     @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .hero-photo-wrap { max-width: 320px; margin: 0 auto; }
+
     }
 
     .hero-grid-bg {
@@ -353,7 +391,7 @@
     }
 
     /* ── ABOUT ── */
-    #about { background: var(--navy-mid); }
+    #about { background: rgba(20,17,26,0.78); }
 
     .about-grid {
       display: grid;
@@ -398,7 +436,7 @@
     .about-info-card {
       position: absolute;
       bottom: -20px; right: -20px;
-      background: var(--navy);
+      background: rgba(13,13,20,0.78);
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 20px 24px;
@@ -468,7 +506,7 @@
     .chip-outline { background: transparent; border: 1px solid rgba(65,105,168,0.35); color: #6b92cc; }
 
     /* ── RESUME ── */
-    #resume { background: var(--navy); }
+    #resume { background: rgba(13,13,20,0.78); }
 
     .resume-layout {
       display: grid;
@@ -548,7 +586,7 @@
     .download-wrap { margin-top: 36px; }
 
     /* ── RESEARCH ── */
-    #research { background: var(--navy-mid); }
+    #research { background: rgba(20,17,26,0.78); }
 
     .research-grid {
       display: grid;
@@ -558,7 +596,7 @@
     }
 
     .research-card {
-      background: var(--navy);
+      background: rgba(13,13,20,0.78);
       border: 1px solid var(--border);
       border-radius: 12px;
       overflow: hidden;
@@ -606,7 +644,7 @@
     .interests-title { font-size: 0.72rem; color: var(--blue-light); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; margin-bottom: 16px; }
 
     /* ── CERTIFICATIONS ── */
-    #certifications { background: var(--navy); }
+    #certifications { background: rgba(13,13,20,0.78); }
 
     .certs-grid {
       display: grid;
@@ -666,7 +704,7 @@
     .member-role { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
 
     /* ── CONTACT ── */
-    #contact { background: var(--navy-mid); }
+    #contact { background: rgba(20,17,26,0.78); }
 
     .contact-grid {
       display: grid;
@@ -714,7 +752,7 @@
 
     /* ── FOOTER ── */
     footer {
-      background: var(--navy);
+      background: rgba(13,13,20,0.78);
       border-top: 1px solid var(--border);
       padding: 32px 5%;
       display: flex; align-items: center; justify-content: space-between;
@@ -759,6 +797,7 @@
   <!-- HERO -->
   <section id="home">
     <div class="hero-grid-bg"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to right, rgba(13,13,20,0.97) 45%, rgba(13,13,20,0.6) 70%, rgba(13,13,20,0.2) 100%);z-index:0;pointer-events:none;"></div>
     <div class="hero-glow"></div>
     <div class="hero-inner">
       <div class="hero-content">
@@ -791,14 +830,9 @@
         </div>
       </div>
 
-      <!-- HERO PHOTO -->
-      <div class="hero-photo-wrap">
-        <img src="images/about-me.png" class="hero-photo" alt="Shailendra Khanal">
-        <div class="hero-photo-badge">
-          <div class="badge-uni">University of Mississippi</div>
-          <div class="badge-name">Shailendra Khanal, EI</div>
-          <div class="badge-dept">Transportation Engineering · PhD</div>
-        </div>
+      <!-- HERO RIGHT IMAGE -->
+      <div class="hero-right-img">
+        <img src="images/background_image.png" alt="Transportation Engineering">
       </div>
 
     </div>
@@ -971,9 +1005,9 @@
 
     <div class="research-grid reveal">
       <div class="research-card">
-        <div class="rc-image" style="background-image:url('images/proj_4.jpg');position:relative;background-size:cover;background-position:center;"><div style="position:absolute;inset:0;background:rgba(13,13,20,0.45);"></div><span class="rc-badge badge-blue" style="position:absolute;top:14px;left:14px;z-index:1;">Ongoing</span></div>
+        <div class="rc-image" style="background-image:url('images/proj_4.png');position:relative;background-size:cover;background-position:center;"><div style="position:absolute;inset:0;background:rgba(13,13,20,0.45);"></div><span class="rc-badge badge-blue" style="position:absolute;top:14px;left:14px;z-index:1;">Ongoing</span></div>
         <div class="rc-body">
-          <div class="rc-title"><a href="#">NCHRP Project 17-131: National Guide for Alternative Intersections & Interchanges (AII)</a></div>
+          <div class="rc-title"><a href="https://apps.trb.org/cmsfeed/TRBNetProjectDisplay.asp?ProjectID=5679" target="_blank">NCHRP Project 17-131: National Guide for Alternative Intersections & Interchanges (AII)</a></div>
           <div class="rc-desc">Developing a practitioner-focused national guide for AII configurations (RCUTs, MUTs, DDIs). Involves 60+ AutoCAD drawings, practitioner surveys, Safety Surrogate Index (SSI) framework, and systematic literature synthesis.</div>
           <div class="rc-footer">Funded by National Cooperative Highway Research Program · University of Mississippi</div>
         </div>
@@ -982,7 +1016,7 @@
       <div class="research-card">
         <div class="rc-image" style="background-image:url('images/proj_3.jpg');position:relative;background-size:cover;background-position:center;"><div style="position:absolute;inset:0;background:rgba(13,13,20,0.45);"></div><span class="rc-badge badge-green" style="position:absolute;top:14px;left:14px;z-index:1;">Presented · TRB 2025</span></div>
         <div class="rc-body">
-          <div class="rc-title"><a href="https://rip.trb.org/view/2262827" target="_blank">Analyzing Public Satisfaction with Winter Road Maintenance in Utah</a></div>
+          <div class="rc-title"><a href="https://rosap.ntl.bts.gov/view/dot/88344" target="_blank">Analyzing Public Satisfaction with Winter Road Maintenance in Utah</a></div>
           <div class="rc-desc">Presented at TRB Annual Meeting 2025. Examined public satisfaction and travel choices during UDOT winter maintenance across 20+ counties. Published as UDOT Technical Report UT-25.06 with Dr. Patrick A. Singleton, USU.</div>
           <div class="rc-footer">Utah Department of Transportation · Utah State University · 2025</div>
         </div>
