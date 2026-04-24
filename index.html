@@ -109,6 +109,92 @@
       overflow: hidden;
     }
 
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 60px;
+      align-items: center;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-photo-wrap {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+
+    .hero-photo-wrap::before {
+      content: '';
+      position: absolute;
+      width: 360px; height: 360px;
+      border-radius: 50%;
+      border: 1px dashed rgba(206,17,38,0.25);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      animation: spin 20s linear infinite;
+    }
+
+    @keyframes spin { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+    .hero-photo-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: -24px; left: -24px;
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(206,17,38,0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-photo {
+      width: 340px;
+      height: 340px;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto;
+      border: 4px solid rgba(206,17,38,0.4);
+      box-shadow: 0 0 0 8px rgba(206,17,38,0.08), 0 32px 80px rgba(0,0,0,0.5);
+    }
+
+    .hero-photo-badge {
+      position: absolute;
+      bottom: 24px;
+      left: -20px;
+      background: var(--navy-mid);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 18px;
+      backdrop-filter: blur(10px);
+    }
+    .hero-photo-badge .badge-uni {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .hero-photo-badge .badge-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-top: 3px;
+    }
+    .hero-photo-badge .badge-dept {
+      font-size: 0.75rem;
+      color: var(--blue-glow);
+      margin-top: 2px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-photo-wrap { max-width: 320px; margin: 0 auto; }
+    }
+
     .hero-grid-bg {
       position: absolute; inset: 0;
       background-image:
@@ -127,7 +213,7 @@
       pointer-events: none;
     }
 
-    .hero-content { position: relative; z-index: 1; max-width: 700px; }
+    .hero-content { position: relative; z-index: 1; }
 
     /* Ole Miss accent variable added */ .hero-tag {
       display: inline-flex; align-items: center; gap: 8px;
@@ -297,15 +383,16 @@
       object-fit: cover;
     }
     .about-photo-placeholder {
-      width: 100%;
-      border-radius: 10px;
-      aspect-ratio: 4/5;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
       background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
       display: flex; align-items: center; justify-content: center;
       font-family: 'DM Serif Display', serif;
       font-size: 5rem;
       color: var(--blue-light);
-      border: 1px solid var(--border);
+      border: 4px solid rgba(206,17,38,0.4);
+      margin: 0 auto 20px auto;
     }
 
     .about-info-card {
@@ -673,16 +760,17 @@
   <section id="home">
     <div class="hero-grid-bg"></div>
     <div class="hero-glow"></div>
-    <div class="hero-content">
-      <div class="hero-tag">Available for Research Collaborations</div>
-      <h1 class="hero-name">Shailendra<br><em>Khanal</em></h1>
-      <p class="hero-title"><strong>PhD Researcher</strong> · Transportation Engineer (EIT) · University of Mississippi</p>
-      <p class="hero-desc">Specializing in Alternative Intersections & Interchanges (AII), transportation safety analysis, and GIS-based crash research. Leading NCHRP Project 17-131 — developing national guidance for safer, smarter intersection design.</p>
-      <div class="hero-actions">
-        <a href="#research" class="btn-primary">View Research →</a>
-        <a href="https://www.linkedin.com/in/shailendra-khanal/" class="btn-secondary" target="_blank">LinkedIn ↗</a>
-        <a href="https://orcid.org/0009-0008-0270-0699" class="btn-secondary" target="_blank">ORCID ↗</a>
-      </div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-tag">Available for Research Collaborations</div>
+        <h1 class="hero-name">Shailendra<br><em>Khanal</em></h1>
+        <p class="hero-title"><strong>PhD Researcher</strong> · Transportation Engineer (EIT) · University of Mississippi</p>
+        <p class="hero-desc">Specializing in Alternative Intersections & Interchanges (AII), transportation safety analysis, and GIS-based crash research. Leading NCHRP Project 17-131 — developing national guidance for safer, smarter intersection design.</p>
+        <div class="hero-actions">
+          <a href="#research" class="btn-primary">View Research →</a>
+          <a href="https://www.linkedin.com/in/shailendra-khanal/" class="btn-secondary" target="_blank">LinkedIn ↗</a>
+          <a href="https://orcid.org/0009-0008-0270-0699" class="btn-secondary" target="_blank">ORCID ↗</a>
+        </div>
       <div class="hero-stats">
         <div class="stat-item">
           <div class="stat-number">60<span>+</span></div>
@@ -700,7 +788,19 @@
           <div class="stat-number">3</div>
           <div class="stat-label">Publications</div>
         </div>
+        </div>
       </div>
+
+      <!-- HERO PHOTO -->
+      <div class="hero-photo-wrap">
+        <img src="images/about-me.png" class="hero-photo" alt="Shailendra Khanal">
+        <div class="hero-photo-badge">
+          <div class="badge-uni">University of Mississippi</div>
+          <div class="badge-name">Shailendra Khanal, EI</div>
+          <div class="badge-dept">Transportation Engineering · PhD</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -709,7 +809,7 @@
     <div class="section-label">About Me</div>
     <div class="about-grid reveal">
       <div class="about-photo-wrap">
-        <img src="images/about-me.png" class="about-photo" alt="Shailendra Khanal" style="width:100%;border-radius:10px;display:block;aspect-ratio:4/5;object-fit:cover;">
+        <img src="images/about-me.png" class="about-photo" alt="Shailendra Khanal" style="width:260px;height:260px;border-radius:50%;display:block;object-fit:cover;object-position:top center;border:4px solid rgba(206,17,38,0.4);box-shadow:0 0 0 8px rgba(206,17,38,0.08);margin:0 auto 20px auto;">
         <div class="about-info-card">
           <div class="card-label">Current Position</div>
           <div class="card-value">PhD Researcher</div>
