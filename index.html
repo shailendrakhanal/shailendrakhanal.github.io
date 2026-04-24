@@ -1,698 +1,1088 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title> Shailendra Khanal Portfolio </title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shailendra Khanal | PhD Researcher | University of Mississippi</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0d0d14;
+      --navy-mid: #14111a;
+      --navy-light: #1e1528;
+      --blue: #ce1126;
+      --blue-light: #e8304a;
+      --blue-glow: #ff6b7a;
+      --accent: #4169a8;
+      --white: #f8f4f0;
+      --text: #c9bfc8;
+      --text-muted: #6b5f6e;
+      --border: rgba(206,17,38,0.18);
+    }
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/aos.css">
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<style>
+    html { scroll-behavior: smooth; }
 
-/*======================================
-   ABOUT
-======================================*/
-.about-mf .box-shadow-full { padding-top: 4rem; padding-bottom: 4rem; }
-.about-mf .about-img { margin-bottom: 2rem; }
-.about-mf .about-img img { margin-left: 10px; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      overflow-x: hidden;
+    }
 
-.skill-mf .progress {
-  margin: .5rem 0 1.2rem 0;
-  border-radius: 0;
-  height: .7rem;
-}
-.skill-mf .progress .progress-bar {
-  height: .7rem;
-  background-color: #ffbd39;
-}
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--navy); }
+    ::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 2px; }
 
-/* Skill Tags */
-.skill-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 6px;
-  margin-bottom: 4px;
-}
-.skill-tag {
-  background-color: #ffbd39;
-  color: #000;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-}
-.skill-tag.secondary {
-  background-color: transparent;
-  border: 2px solid #ffbd39;
-  color: #fff;
-}
-.skill-category-label {
-  font-size: 11px;
-  font-weight: 700;
-  color: #ffbd39;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 14px;
-  margin-bottom: 5px;
-  display: block;
-}
+    /* ── NOISE TEXTURE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
 
-/* Highlights */
-.highlight-box {
-  background: rgba(255,189,57,0.10);
-  border-left: 4px solid #ffbd39;
-  padding: 10px 15px;
-  margin-bottom: 10px;
-  border-radius: 0 6px 6px 0;
-}
-.highlight-box p {
-  margin: 0;
-  font-size: 13px;
-  color: #ccc;
-  line-height: 1.5;
-}
-.highlight-box strong { color: #ffbd39; }
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 5%;
+      height: 70px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(10,22,40,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
 
-/* Certifications */
-.cert-item {
-  background: rgba(255,189,57,0.08);
-  border-left: 4px solid #ffbd39;
-  padding: 12px 16px;
-  margin-bottom: 12px;
-  border-radius: 0 6px 6px 0;
-}
-.cert-item h4 { margin: 0 0 4px 0; font-size: 15px; font-weight: 600; color: #fff; }
-.cert-item span { font-size: 13px; color: #ffbd39; }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .nav-logo span { color: var(--blue-light); }
 
-/* Research badges */
-.badge-ongoing { background: #ffbd39; color: #000; padding: 3px 10px; font-size: 11px; font-weight: 700; border-radius: 3px; }
-.badge-published { background: #28a745; color: #fff; padding: 3px 10px; font-size: 11px; font-weight: 700; border-radius: 3px; }
-.badge-presented { background: #007bff; color: #fff; padding: 3px 10px; font-size: 11px; font-weight: 700; border-radius: 3px; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute; bottom: -4px; left: 0; right: 0;
+      height: 1px;
+      background: var(--blue-light);
+      transform: scaleX(0);
+      transition: transform 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { transform: scaleX(1); }
 
-/* Memberships */
-.membership-item {
-  display: flex; align-items: center; gap: 12px;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-}
-.membership-item span.org { font-weight: 600; color: #fff; font-size: 14px; }
-.membership-item span.role { font-size: 12px; color: #aaa; }
+    .nav-cta {
+      background: var(--blue);
+      color: #fff !important;
+      padding: 8px 20px;
+      border-radius: 4px;
+      font-size: 0.82rem !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--blue-light) !important; }
+    .nav-cta::after { display: none !important; }
 
-/* Typing animation */
-#typing-animation {
-  position: relative; font-size: 30px; font-weight: bold; color: rgb(255,255,255);
-  overflow: hidden; white-space: nowrap;
-  animation: typing 3s steps(20, end) infinite;
-}
-#typing-animation:before {
-  content: ""; top: 0; left: 0; width: 0; height: 100%;
-  background-color: #ccc;
-  animation: typing-cursor 0.5s ease-in-out infinite;
-}
-@keyframes typing { from { width: 0; } to { width: 100%; } }
-@keyframes typing-cursor { from { width: 5px; } to { width: 0; } }
+    /* ── HERO ── */
+    #home {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 100px 5% 60px;
+      position: relative;
+      overflow: hidden;
+    }
 
-/* Zoom effect */
-.zoom-effect { overflow: hidden; transition: transform 0.3s ease-out; }
-.zoom-effect:hover { transform: scale(1.1); }
+    .hero-grid-bg {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(206,17,38,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(206,17,38,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
 
-</style>
+    .hero-glow {
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(206,17,38,0.15) 0%, transparent 70%);
+      top: -100px; right: -100px;
+      pointer-events: none;
+    }
 
-  </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    .hero-content { position: relative; z-index: 1; max-width: 700px; }
 
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">Shailendra Khanal</a>
-        <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="oi oi-menu"></span> Menu
-        </button>
-        <div class="collapse navbar-collapse" id="ftco-nav">
-          <ul class="navbar-nav nav ml-auto">
-            <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-            <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-            <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-            <li class="nav-item"><a href="#research-section" class="nav-link"><span>Research</span></a></li>
-            <li class="nav-item"><a href="#certifications-section" class="nav-link"><span>Credentials</span></a></li>
-            <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-          </ul>
+    /* Ole Miss accent variable added */ .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(206,17,38,0.12);
+      border: 1px solid rgba(206,17,38,0.3);
+      color: var(--blue-glow);
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      animation: fadeUp 0.6s ease both;
+    }
+    .hero-tag::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--blue-glow);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    .hero-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1.05;
+      color: var(--white);
+      animation: fadeUp 0.6s 0.1s ease both;
+      margin-bottom: 8px;
+    }
+    .hero-name em {
+      font-style: italic;
+      color: var(--blue-light);
+    }
+
+    .hero-title {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      color: var(--text);
+      font-weight: 300;
+      margin-bottom: 24px;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+    .hero-title strong { color: var(--white); font-weight: 500; }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.75;
+      max-width: 560px;
+      margin-bottom: 40px;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+
+    .hero-actions {
+      display: flex; gap: 16px; flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.4s ease both;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover { background: var(--blue-light); transform: translateY(-2px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, transform 0.2s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-secondary:hover { border-color: var(--blue-light); transform: translateY(-2px); }
+
+    .hero-stats {
+      display: flex; gap: 40px; flex-wrap: wrap;
+      margin-top: 60px; padding-top: 40px;
+      border-top: 1px solid var(--border);
+      animation: fadeUp 0.6s 0.5s ease both;
+    }
+    .stat-item {}
+    .stat-number {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem;
+      color: var(--white);
+      line-height: 1;
+    }
+    .stat-number span { color: var(--blue-light); }
+    .stat-label { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 100px 5%; position: relative; }
+
+    .section-label {
+      font-size: 0.75rem;
+      color: var(--blue-light);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--white);
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--text);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 60px;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--navy-mid); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      max-width: 1100px;
+    }
+
+    .about-photo-wrap {
+      position: relative;
+    }
+    .about-photo-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -12px;
+      border: 1px solid rgba(206,17,38,0.25);
+      border-radius: 12px;
+      transform: rotate(2deg);
+    }
+    .about-photo {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+      background: var(--navy-light);
+      aspect-ratio: 4/5;
+      object-fit: cover;
+    }
+    .about-photo-placeholder {
+      width: 100%;
+      border-radius: 10px;
+      aspect-ratio: 4/5;
+      background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Serif Display', serif;
+      font-size: 5rem;
+      color: var(--blue-light);
+      border: 1px solid var(--border);
+    }
+
+    .about-info-card {
+      position: absolute;
+      bottom: -20px; right: -20px;
+      background: var(--navy);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+      min-width: 200px;
+    }
+    .about-info-card .card-label { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+    .about-info-card .card-value { font-size: 1rem; font-weight: 600; color: var(--white); margin-top: 4px; }
+    .about-info-card .card-sub { font-size: 0.8rem; color: var(--blue-glow); margin-top: 2px; }
+
+    .about-text h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .about-text p {
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 28px 0;
+    }
+    .highlight-card {
+      background: rgba(206,17,38,0.07);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      transition: border-color 0.2s;
+    }
+    .highlight-card:hover { border-color: var(--blue-light); }
+    .highlight-card .h-number {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.6rem;
+      color: var(--blue-light);
+    }
+    .highlight-card .h-text { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; line-height: 1.4; }
+
+    .about-meta {
+      display: flex; flex-direction: column; gap: 10px;
+      margin-top: 24px;
+    }
+    .meta-row {
+      display: flex; gap: 12px; align-items: baseline;
+      font-size: 0.88rem;
+    }
+    .meta-row .meta-key { color: var(--text-muted); min-width: 90px; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    .meta-row .meta-val { color: var(--text); }
+
+    /* Skills */
+    .skills-section { margin-top: 40px; }
+    .skill-group { margin-bottom: 20px; }
+    .skill-group-label { font-size: 0.72rem; color: var(--blue-glow); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 10px; }
+    .skill-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip {
+      padding: 5px 14px;
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+    .chip-solid { background: rgba(206,17,38,0.2); border: 1px solid rgba(206,17,38,0.4); color: var(--blue-glow); }
+    .chip-outline { background: transparent; border: 1px solid rgba(65,105,168,0.35); color: #6b92cc; }
+
+    /* ── RESUME ── */
+    #resume { background: var(--navy); }
+
+    .resume-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      max-width: 1100px;
+    }
+
+    .resume-col-title {
+      font-size: 0.72rem;
+      color: var(--blue-light);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      margin-bottom: 28px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .timeline { position: relative; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 8px; bottom: 0;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .tl-item {
+      padding-left: 28px;
+      margin-bottom: 36px;
+      position: relative;
+    }
+    .tl-item::before {
+      content: '';
+      position: absolute;
+      left: -4px; top: 6px;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--blue);
+      border: 2px solid var(--navy);
+      box-shadow: 0 0 0 3px rgba(206,17,38,0.2);
+    }
+
+    .tl-date { font-size: 0.72rem; color: var(--blue-glow); font-weight: 600; letter-spacing: 0.06em; margin-bottom: 6px; }
+    .tl-role { font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 3px; }
+    .tl-org { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px; }
+    .tl-bullets { list-style: none; }
+    .tl-bullets li {
+      font-size: 0.85rem;
+      color: var(--text);
+      line-height: 1.6;
+      padding-left: 14px;
+      position: relative;
+      margin-bottom: 6px;
+    }
+    .tl-bullets li::before {
+      content: '→';
+      position: absolute; left: 0;
+      color: var(--blue-light);
+      font-size: 0.75rem;
+    }
+
+    .edu-item {
+      background: rgba(206,17,38,0.05);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+      transition: border-color 0.2s;
+    }
+    .edu-item:hover { border-color: rgba(206,17,38,0.4); }
+    .edu-degree { font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+    .edu-school { font-size: 0.85rem; color: var(--blue-glow); margin-bottom: 4px; }
+    .edu-meta { font-size: 0.78rem; color: var(--text-muted); }
+
+    .download-wrap { margin-top: 36px; }
+
+    /* ── RESEARCH ── */
+    #research { background: var(--navy-mid); }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+    }
+
+    .research-card {
+      background: var(--navy);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .research-card:hover { border-color: var(--blue-light); transform: translateY(-4px); }
+
+    .rc-image {
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .rc-image-placeholder {
+      height: 180px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem;
+    }
+    .rc-image-placeholder.blue { background: linear-gradient(135deg, #2d0a10, #8b1a2a); }
+    .rc-image-placeholder.teal { background: linear-gradient(135deg, #0d1a40, #1a3070); }
+    .rc-image-placeholder.amber { background: linear-gradient(135deg, #2d0a10, #8b1a2a); }
+
+    .rc-badge {
+      position: absolute; top: 14px; left: 14px;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .badge-blue { background: rgba(206,17,38,0.9); color: #fff; }
+    .badge-green { background: rgba(65,105,168,0.92); color: #fff; }
+    .badge-amber { background: rgba(180,20,45,0.92); color: #fff; }
+
+    .rc-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+    .rc-title { font-size: 0.95rem; font-weight: 600; color: var(--white); margin-bottom: 10px; line-height: 1.4; }
+    .rc-title a { color: inherit; text-decoration: none; }
+    .rc-title a:hover { color: var(--blue-light); }
+    .rc-desc { font-size: 0.82rem; color: var(--text); line-height: 1.65; flex: 1; }
+    .rc-footer { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 0.75rem; color: var(--text-muted); }
+
+    .interests-wrap { margin-top: 60px; max-width: 1100px; }
+    .interests-title { font-size: 0.72rem; color: var(--blue-light); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; margin-bottom: 16px; }
+
+    /* ── CERTIFICATIONS ── */
+    #certifications { background: var(--navy); }
+
+    .certs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      max-width: 1100px;
+    }
+
+    .cert-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 14px;
+      transition: border-color 0.2s, background 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .cert-card::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--blue);
+    }
+    .cert-card:hover { border-color: rgba(206,17,38,0.4); background: rgba(206,17,38,0.04); }
+    .cert-card.muted::before { background: var(--text-muted); }
+    .cert-name { font-size: 0.95rem; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+    .cert-name.muted-text { color: var(--text-muted); }
+    .cert-issuer { font-size: 0.8rem; color: var(--blue-glow); }
+    .cert-issuer.muted-text { color: var(--text-muted); }
+
+    .award-item {
+      display: flex; gap: 16px; align-items: flex-start;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .award-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: rgba(206,17,38,0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .award-name { font-size: 0.92rem; font-weight: 600; color: var(--white); margin-bottom: 3px; }
+    .award-desc { font-size: 0.8rem; color: var(--text-muted); }
+
+    .member-item {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .member-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--blue-light); flex-shrink: 0;
+    }
+    .member-name { font-size: 0.9rem; font-weight: 500; color: var(--white); }
+    .member-role { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--navy-mid); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      max-width: 1100px;
+      align-items: start;
+    }
+
+    .contact-cards { display: flex; flex-direction: column; gap: 16px; }
+    .contact-card {
+      display: flex; align-items: center; gap: 20px;
+      background: rgba(206,17,38,0.06);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .contact-card:hover { border-color: var(--blue-light); transform: translateX(4px); }
+    .contact-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: rgba(206,17,38,0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .contact-label { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+    .contact-value { font-size: 0.95rem; color: var(--white); font-weight: 500; }
+
+    .contact-cta {
+      background: rgba(206,17,38,0.07);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 40px;
+    }
+    .contact-cta h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .contact-cta p { color: var(--text); font-size: 0.92rem; line-height: 1.7; margin-bottom: 28px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      border-top: 1px solid var(--border);
+      padding: 32px 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .footer-left { font-size: 0.82rem; color: var(--text-muted); }
+    .footer-left a { color: var(--blue-glow); text-decoration: none; }
+    .footer-right { display: flex; gap: 20px; }
+    .footer-link { font-size: 0.82rem; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .footer-link:hover { color: var(--white); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 5%; }
+      .nav-links { display: none; }
+      .about-grid, .resume-layout, .research-grid, .certs-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .highlights-grid { grid-template-columns: 1fr 1fr; }
+      .hero-stats { gap: 24px; }
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#home" class="nav-logo">SK<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#certifications">Credentials</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://drive.google.com/file/d/1iYUTPi4nzWJFCQpZQQANS7f-cP5YbTVz/view?usp=sharing" class="nav-cta" target="_blank">Download CV</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <div class="hero-tag">Available for Research Collaborations</div>
+      <h1 class="hero-name">Shailendra<br><em>Khanal</em></h1>
+      <p class="hero-title"><strong>PhD Researcher</strong> · Transportation Engineer (EIT) · University of Mississippi</p>
+      <p class="hero-desc">Specializing in Alternative Intersections & Interchanges (AII), transportation safety analysis, and GIS-based crash research. Leading NCHRP Project 17-131 — developing national guidance for safer, smarter intersection design.</p>
+      <div class="hero-actions">
+        <a href="#research" class="btn-primary">View Research →</a>
+        <a href="https://www.linkedin.com/in/shailendra-khanal/" class="btn-secondary" target="_blank">LinkedIn ↗</a>
+        <a href="https://orcid.org/0009-0008-0270-0699" class="btn-secondary" target="_blank">ORCID ↗</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">60<span>+</span></div>
+          <div class="stat-label">AII Drawings</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1K<span>+</span></div>
+          <div class="stat-label">Surveys Analyzed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">25<span>%</span></div>
+          <div class="stat-label">VRU Risk Improvement</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Publications</div>
         </div>
       </div>
-    </nav>
+    </div>
+  </section>
 
-    <!-- HOME -->
-    <section id="home-section" class="hero">
-      <div class="home-slider owl-carousel">
-        <div class="slider-item">
-          <div class="overlay"></div>
-          <div class="container">
-            <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-              <div class="one-third js-fullheight order-md-last img" style="background-image:url(images/background_image.png);">
-                <div class="overlay"></div>
-              </div>
-              <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-                <div class="text">
-                  <span class="subheading">Hello!</span>
-                  <h1 class="mb-4 mt-3">I'm <span>Shailendra Khanal</span></h1>
-                  <span id="typing-animation"></span>
-                  <script>
-                    const typingAnimationElement = document.getElementById('typing-animation');
-                    const typingTexts = [
-                      'PhD Researcher  ',
-                      'Transportation Engineer (EIT)  ',
-                      'Alternative Intersections  ',
-                      'GRA at Ole Miss  ',
-                    ];
-                    function playTypingAnimation(text) {
-                      for (let i = 0; i < text.length; i++) {
-                        setTimeout(() => { typingAnimationElement.textContent += text[i]; }, i * 150);
-                      }
-                      setTimeout(() => {
-                        typingAnimationElement.textContent = '';
-                        playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-                      }, text.length * 150 + 800);
-                    }
-                    playTypingAnimation(typingTexts[0]);
-                  </script>
-                  <br><br>
-                  <h2>Transportation Safety &amp; Alternative Intersections &amp; Interchanges</h2>
-                  <p>
-                    <a href="https://www.linkedin.com/in/shailendra-khanal/" class="btn btn-primary py-3 px-4" target="_blank">LinkedIn</a>&nbsp;
-                    <a href="https://orcid.org/0009-0008-0270-0699" class="btn btn-white btn-outline-white py-3 px-4" style="border:2px solid #fff;color:#fff;margin-top:4px;display:inline-block;" target="_blank">ORCID</a>
-                  </p>
-                </div>
-              </div>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-label">About Me</div>
+    <div class="about-grid reveal">
+      <div class="about-photo-wrap">
+        <img src="images/about-me.png" class="about-photo" alt="Shailendra Khanal" style="width:100%;border-radius:10px;display:block;aspect-ratio:4/5;object-fit:cover;">
+        <div class="about-info-card">
+          <div class="card-label">Current Position</div>
+          <div class="card-value">PhD Researcher</div>
+          <div class="card-sub">University of Mississippi</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <h3>Transportation Safety Researcher & Engineer-in-Training</h3>
+        <p>I am a PhD student in Transportation Engineering at the University of Mississippi (Ole Miss), working as a Graduate Research and Teaching Assistant under Dr. Amir M. Molan. My primary research focuses on NCHRP Project 17-131 — developing a national practitioner guide for Alternative Intersections and Interchanges (AII).</p>
+        <p>I hold a Master's in Transportation Engineering from Utah State University (GPA: 3.75) and bring experience across two countries — from UDOT-funded VRU safety research in Utah to roadway design projects in Nepal.</p>
+
+        <div class="highlights-grid">
+          <div class="highlight-card">
+            <div class="h-number">60+</div>
+            <div class="h-text">AutoCAD AII intersection drawings produced</div>
+          </div>
+          <div class="highlight-card">
+            <div class="h-number">25%</div>
+            <div class="h-text">VRU risk detection improvement (UDOT)</div>
+          </div>
+          <div class="highlight-card">
+            <div class="h-number">1,000+</div>
+            <div class="h-text">Surveys analyzed for winter maintenance</div>
+          </div>
+          <div class="highlight-card">
+            <div class="h-number">TRB</div>
+            <div class="h-text">Paper accepted & presented, 2025</div>
+          </div>
+        </div>
+
+        <div class="about-meta">
+          <div class="meta-row"><span class="meta-key">Location</span><span class="meta-val">Oxford, Mississippi</span></div>
+          <div class="meta-row"><span class="meta-key">Education</span><span class="meta-val">PhD (Ole Miss) · MS (USU, 2025) · BE (TU, Nepal)</span></div>
+          <div class="meta-row"><span class="meta-key">Languages</span><span class="meta-val">English, Nepali, Hindi</span></div>
+          <div class="meta-row"><span class="meta-key">ORCID</span><span class="meta-val"><a href="https://orcid.org/0009-0008-0270-0699" target="_blank" style="color:var(--blue-glow);text-decoration:none;">0009-0008-0270-0699</a></span></div>
+        </div>
+
+        <div class="skills-section">
+          <div class="skill-group">
+            <div class="skill-group-label">Engineering & Design</div>
+            <div class="skill-chips">
+              <span class="chip chip-solid">AutoCAD Civil 3D</span>
+              <span class="chip chip-solid">OpenRoads Designer</span>
+              <span class="chip chip-solid">MicroStation</span>
+              <span class="chip chip-solid">Synchro</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-label">Programming & Data</div>
+            <div class="skill-chips">
+              <span class="chip chip-outline">Python (Advanced)</span>
+              <span class="chip chip-outline">R (Advanced)</span>
+              <span class="chip chip-outline">SPSS</span>
+              <span class="chip chip-outline">MATLAB</span>
+              <span class="chip chip-outline">Excel (Advanced)</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-label">GIS & Standards</div>
+            <div class="skill-chips">
+              <span class="chip chip-outline">ArcGIS Pro</span>
+              <span class="chip chip-outline">QGIS</span>
+              <span class="chip chip-outline">AASHTO</span>
+              <span class="chip chip-outline">MUTCD</span>
+              <span class="chip chip-outline">FHWA</span>
+              <span class="chip chip-outline">HCM Analysis</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ABOUT -->
-    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-      <div class="container">
-        <div class="row">
-          <div class="row d-flex align-items-stretch">
-            <div class="col-md-6 col-lg-5 d-flex">
-              <div class="img-about img d-flex align-items-stretch">
-                <div class="overlay">
-                  <div class="row">
-                    <div class="col-sm-6 col-md-5">
-                      <div class="about-img">
-                        <img src="images/about-me.png" class="img-fluid rounded b-shadow-a" alt="">
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-md-7">
-                      <div class="about-info">
-                        <p><span class="title-s">Name: </span><span>Shailendra Khanal, EI</span></p>
-                        <p><span class="title-s">Role: </span><span>Graduate Research &amp; Teaching Assistant</span></p>
-                        <p><span class="title-s">Experience: </span><span>5+ years</span></p>
-                        <p><span class="title-s">Location: </span><span>Oxford, Mississippi</span></p>
-                        <p><span class="title-s">MS GPA: </span><span>3.75 / 4.0</span></p>
-                      </div>
-                    </div>
-                  </div>
+  <!-- RESUME -->
+  <section id="resume">
+    <div class="section-label">Experience & Education</div>
+    <div class="section-title">Resume</div>
+    <div class="section-subtitle">PhD researcher and EIT with expertise spanning transportation safety, GIS crash analysis, alternative intersection design, and roadway engineering across the U.S. and Nepal.</div>
 
-                  <div class="skill-mf" style="margin-top:14px;">
-                    <p class="title-s">Technical Skills</p>
-
-                    <span class="skill-category-label">Engineering &amp; Design</span>
-                    <div class="skill-tags">
-                      <span class="skill-tag">AutoCAD Civil 3D</span>
-                      <span class="skill-tag">OpenRoads Designer</span>
-                      <span class="skill-tag">MicroStation</span>
-                      <span class="skill-tag">Synchro</span>
-                      <span class="skill-tag">ETABS</span>
-                    </div>
-
-                    <span class="skill-category-label">Programming &amp; Data</span>
-                    <div class="skill-tags">
-                      <span class="skill-tag secondary">Python (Advanced)</span>
-                      <span class="skill-tag secondary">R (Advanced)</span>
-                      <span class="skill-tag secondary">MATLAB</span>
-                      <span class="skill-tag secondary">SPSS</span>
-                      <span class="skill-tag secondary">Excel (Advanced)</span>
-                    </div>
-
-                    <span class="skill-category-label">GIS &amp; Spatial Analysis</span>
-                    <div class="skill-tags">
-                      <span class="skill-tag secondary">ArcGIS Pro</span>
-                      <span class="skill-tag secondary">QGIS</span>
-                    </div>
-
-                    <span class="skill-category-label">Standards &amp; Methods</span>
-                    <div class="skill-tags">
-                      <span class="skill-tag secondary">HCM Analysis</span>
-                      <span class="skill-tag secondary">AASHTO</span>
-                      <span class="skill-tag secondary">MUTCD</span>
-                      <span class="skill-tag secondary">FHWA</span>
-                      <span class="skill-tag secondary">NACTO</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-              <div class="row justify-content-start pb-3">
-                <div class="col-md-12 heading-section ftco-animate">
-                  <h1 class="big">About</h1>
-                  <h2 class="mb-4">About Me</h2>
-                  <p>I am a PhD researcher in Transportation Engineering at the University of Mississippi (Ole Miss), working as a Graduate Research and Teaching Assistant under Dr. Amir M. Molan. My primary research focuses on <strong>NCHRP Project 17-131</strong> — developing a national practitioner guide for Alternative Intersections and Interchanges (AII), including safety surrogate frameworks, operational analysis, and design guidance for unconventional configurations such as RCUTs, MUTs, and DDIs.</p>
-                  <p>I hold a Master's in Transportation Engineering from Utah State University (GPA: 3.71) and bring hands-on experience across two countries — from UDOT-funded VRU safety research in Utah to roadway design projects in Nepal. I am passionate about evidence-based roadway safety, GIS-driven crash analysis, and translating research into actionable DOT guidance.</p>
-
-                  <h5 style="color:#ffbd39; margin-top:20px; margin-bottom:12px;">Key Highlights</h5>
-                  <div class="highlight-box">
-                    <p>🔬 Leading NCHRP AII research producing <strong>60+ intersection drawings</strong> and a Safety Surrogate Index (SSI) framework for national DOT guidance.</p>
-                  </div>
-                  <div class="highlight-box">
-                    <p>📊 Improved VRU risk detection by <strong>25%</strong> with UDOT's statewide systemic safety tool (Python &amp; ArcGIS Pro).</p>
-                  </div>
-                  <div class="highlight-box">
-                    <p>📋 Led analysis of <strong>1,000+ surveys</strong> influencing UDOT snow removal policies across 20+ Utah counties.</p>
-                  </div>
-                  <div class="highlight-box">
-                    <p>🏛️ Accepted and presented at <strong>TRB Annual Meeting 2025</strong>; published in international engineering journal (2020).</p>
-                  </div>
-
-                  <ul class="about-info mt-4 px-md-0 px-2">
-                    <li class="d-flex"><span>Specialization:</span><span>Transportation Safety, AII Design, GIS Crash Analysis</span></li>
-                    <li class="d-flex"><span>Education:</span><span>PhD (Ole Miss) | MS (USU, 2025) | BE Civil (TU, Nepal)</span></li>
-                    <li class="d-flex"><span>Languages:</span><span>English, Nepali, Hindi</span></li>
-                    <li class="d-flex"><span>Memberships:</span><span>ASCE, ITE</span></li>
-                    <li class="d-flex"><span>ORCID:</span><span><a href="https://orcid.org/0009-0008-0270-0699" target="_blank" style="color:#ffbd39;">0009-0008-0270-0699</a></span></li>
-                    <li class="d-flex"><span>Interests:</span><span>Traveling, City Planning, Research, Photography</span></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- RESUME -->
-    <section class="ftco-section ftco-no-pb" id="resume-section">
-      <div class="container">
-        <div class="row justify-content-center pb-5">
-          <div class="col-md-10 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Resume</h1>
-            <h2 class="mb-4">Resume</h2>
-            <p>PhD researcher and Engineer-in-Training (EIT) with expertise in transportation safety, alternative intersection design, GIS-based crash analysis, and roadway design. Currently preparing for the PE Civil (Transportation) exam — target Summer 2026.</p>
-          </div>
-        </div>
-
-        <div class="row"><h1 class="big-4">Research Experience</h1><div class="underline"></div></div>
-        <br>
-
-        <div class="row">
-          <div class="col-md-6">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">Aug 2025 – Present</span>
-              <h2>Graduate Research &amp; Teaching Assistant</h2>
-              <span class="position">University of Mississippi (Ole Miss) · Oxford, MS</span>
-              <p class="mt-4"><ul>
-                <li>Leading NCHRP Project 17-131 research on Alternative Intersection &amp; Interchange (AII) designs — producing 60+ AutoCAD-based drawings with pedestrian/non-motorized movement figures and conflict point visualizations aligned with FHWA and AASHTO standards.</li>
-                <li>Developing a Safety Surrogate Index (SSI) framework to quantify and compare safety performance across AII configurations for national DOT guidance.</li>
-                <li>Conducting systematic literature reviews, practitioner surveys, and data collection for state and federal DOT research projects.</li>
-                <li>Teaching Assistant for CE 208 (Civil Engineering Graphics I); Graduate Senator for Civil Engineering through Ole Miss SGA.</li>
-              </ul></p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">Aug 2023 – Aug 2025</span>
-              <h2>Graduate Research Assistant</h2>
-              <span class="position">Utah State University · Logan, UT</span>
-              <p class="mt-4"><ul>
-                <li>Co-developed UDOT's Systemic Safety Tool for Vulnerable Road Users (VRUs), improving risk detection accuracy by 25% using Python-based geospatial models and crash/exposure datasets.</li>
-                <li>Analyzed 1,000+ statewide survey responses identifying service gaps in winter maintenance, directly influencing UDOT snow removal policies in 20+ counties.</li>
-                <li>Delivered engineering recommendations for 10+ high-risk pedestrian corridors, supporting DOT grant applications and infrastructure upgrades.</li>
-                <li>Generated 10+ alignments and 75+ typical sections for statewide project documentation and right-of-way planning.</li>
-              </ul></p>
-            </div>
-          </div>
-        </div>
-
-        <br><br>
-        <div class="row"><h1 class="big-4">Professional Experience</h1><div class="underline"></div></div>
-        <br>
-
-        <div class="row">
-          <div class="col-md-6">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">Dec 2019 – Mar 2023</span>
-              <h2>Civil Engineer – Transportation Specialist</h2>
-              <span class="position">Engineer's and Surveyor's Associates · Kathmandu, Nepal</span>
-              <p class="mt-4"><ul>
-                <li>Designed urban and rural roadway alignments using AutoCAD Civil 3D and OpenRoads, improving traffic efficiency by 25% and reducing design-related change orders by 40% across 7 projects.</li>
-                <li>Conducted 10+ traffic impact studies for commercial and institutional sites, mitigating projected congestion by up to 18%.</li>
-                <li>Maintained 95% compliance with national engineering standards across all project phases.</li>
-              </ul></p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">2019 – 2023</span>
-              <h2>Lecturer (Part-time)</h2>
-              <span class="position">Gyanodaya Secondary School · Kathmandu, Nepal</span>
-              <p class="mt-4"><ul>
-                <li>Taught civil engineering fundamentals at the high school level, covering structural design, surveying, transportation, and construction techniques.</li>
-                <li>Developed instructional materials bridging theory and field practice.</li>
-              </ul></p>
-            </div>
-          </div>
-        </div>
-
-        <br><br>
-        <div class="row"><h1 class="big-4">Education</h1><div class="underline"></div></div>
-        <br>
-
-        <div class="row">
-          <div class="col-md-4">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">Aug 2025 – Present</span>
-              <h2>PhD, Civil Engineering</h2>
-              <span class="position">University of Mississippi (Ole Miss), Oxford, MS</span>
-              <p class="mt-4">Concentration: Transportation Systems. Research: Alternative Intersections &amp; Interchanges, roadway safety performance.</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">Aug 2023 – Aug 2025</span>
-              <h2>MS, Civil Engineering (Transportation)</h2>
-              <span class="position">Utah State University, Logan, UT · GPA: 3.75/4.0</span>
-              <p class="mt-4">Thesis: Assessing Public Satisfaction and Transportation Choices During Winter Road Maintenance. Presented at TRB Annual Meeting 2025. GRE: Quant 167 / Verbal 147.</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">2015 – 2019</span>
-              <h2>BE, Civil Engineering</h2>
-              <span class="position">Tribhuvan University (Kathmandu Engineering College), Nepal</span>
-              <p class="mt-4">Percentage: 80.59% (Distinction). Courses: Transportation Engineering, Highway &amp; Airport Engineering, Hydraulics, Hydrology.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row justify-content-center mt-5">
-          <div class="col-md-6 text-center ftco-animate">
-            <p><a href="https://drive.google.com/file/d/1iYUTPi4nzWJFCQpZQQANS7f-cP5YbTVz/view?usp=sharing" class="btn btn-primary py-4 px-5" target="_blank">Download CV</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- RESEARCH -->
-    <section class="ftco-section" id="research-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-5">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Research</h1>
-            <h2 class="mb-4">Research &amp; Publications</h2>
-            <p>Selected research projects, technical reports, and publications in transportation engineering.</p>
-          </div>
-        </div>
-
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-            <div class="blog-entry justify-content-end">
-              <a href="https://apps.trb.org/cmsfeed/TRBNetProjectDisplay.asp?ProjectID=5679" class="block-20 zoom-effect" style="background-image: url('images/proj_4.png');"></a>
-              <div class="text mt-3 float-right d-block">
-                <span class="badge-ongoing">Ongoing</span>
-                <h3 class="heading mt-2"><a href="https://apps.trb.org/cmsfeed/TRBNetProjectDisplay.asp?ProjectID=5679">NCHRP Project 17-131: National Guide for Alternative Intersections &amp; Interchanges (AII)</a></h3>
-                <p>Developing a practitioner-focused national guide for AII configurations (RCUTs, MUTs, DDIs). Involves 60+ AutoCAD drawings, practitioner surveys, SSI framework development, and systematic literature synthesis. Funded by the National Cooperative Highway Research Program.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 d-flex ftco-animate">
-            <div class="blog-entry justify-content-end">
-              <a href="https://rosap.ntl.bts.gov/view/dot/88344" class="block-20 zoom-effect" style="background-image: url('images/proj_3.jpg');" target="_blank"></a>
-              <div class="text mt-3 float-right d-block">
-                <span class="badge-presented">Presented · TRB 2025</span>
-                <h3 class="heading mt-2"><a href="https://rosap.ntl.bts.gov/view/dot/88344" target="_blank">Analyzing Public Satisfaction with Winter Road Maintenance in Utah</a></h3>
-                <p>Accepted and presented at the Transportation Research Board (TRB) Annual Meeting 2025. Examined public satisfaction and travel choices during UDOT winter maintenance operations across 20+ counties. Published as UDOT Technical Report UT-25.06 (co-authored with Dr. Patrick A. Singleton, USU).</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 d-flex ftco-animate">
-            <div class="blog-entry justify-content-end">
-              <a href="https://d1wqtxts1xzle7.cloudfront.net/64236500/1596774873_Volume_7__Issue_8-libre.pdf" class="block-20 zoom-effect" style="background-image: url('images/proj_1.jpg');" target="_blank"></a>
-              <div class="text mt-3 float-right d-block">
-                <span class="badge-published">Published · IJIERT 2020</span>
-                <h3 class="heading mt-2"><a href="https://d1wqtxts1xzle7.cloudfront.net/64236500/1596774873_Volume_7__Issue_8-libre.pdf" target="_blank">On-Street Parking in Inner Kathmandu: Parking Load and Efficiency of Motorcycles, New Road Area</a></h3>
-                <p>Published in the <em>International Journal of Innovations in Engineering Research and Technology (IJIERT)</em>. Analyzed motorcycle parking patterns, congestion levels, and space utilization in Kathmandu Metropolitan City.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Research Interests -->
-        <div class="row mt-5">
-          <div class="col-md-12">
-            <h4 style="color:#ffbd39; margin-bottom:16px;">Research Interests</h4>
-            <div class="skill-tags">
-              <span class="skill-tag">Alternative Intersections &amp; Interchanges</span>
-              <span class="skill-tag">Transportation Safety Analysis</span>
-              <span class="skill-tag secondary">GIS-Based Crash Analysis</span>
-              <span class="skill-tag secondary">Roadway Geometric Design</span>
-              <span class="skill-tag secondary">Traffic Operations &amp; HCM</span>
-              <span class="skill-tag secondary">Vulnerable Road User Safety</span>
-              <span class="skill-tag secondary">Winter Road Maintenance</span>
-              <span class="skill-tag secondary">Transportation Data Analytics</span>
-              <span class="skill-tag secondary">AI-Enabled Transportation Modeling</span>
-            </div>
-          </div>
-        </div>
-        <br>
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS -->
-    <section class="ftco-section ftco-no-pb" id="certifications-section">
-      <div class="container">
-        <div class="row justify-content-center pb-5">
-          <div class="col-md-10 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Creds</h1>
-            <h2 class="mb-4">Certifications, Licenses &amp; Memberships</h2>
-            <p>Professional engineering licenses, credentials, and organizational memberships.</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6 ftco-animate">
-            <h4 style="color:#ffbd39; margin-bottom:16px;">Licenses &amp; Certifications</h4>
-            <div class="cert-item">
-              <h4>Engineer Intern (EI) – Civil Engineering</h4>
-              <span>Mississippi Board of Licensure · FE Civil Exam Passed, Mar 2024 (NCEES)</span>
-            </div>
-            <div class="cert-item">
-              <h4>Civil Engineer (Category "A")</h4>
-              <span>Nepal Engineering Council · Reg. No. 24560</span>
-            </div>
-            <div class="cert-item">
-              <h4>Bentley Accredited Road Modeler: OpenRoads Modeling Core Skills</h4>
-              <span>Bentley Systems · 2025</span>
-            </div>
-            <div class="cert-item">
-              <h4>Bentley Accredited Road Designer: Road Design Modeling with OpenRoads Designer</h4>
-              <span>Bentley Systems · 2024</span>
-            </div>
-            <div class="cert-item" style="border-left-color:#555;">
-              <h4 style="color:#aaa;">PE Civil (Transportation) – In Preparation</h4>
-              <span style="color:#777;">Target: Summer 2026 · NCEES</span>
-            </div>
-          </div>
-
-          <div class="col-md-6 ftco-animate">
-            <h4 style="color:#ffbd39; margin-bottom:16px;">Professional Memberships</h4>
-            <div class="membership-item">
-              <div>
-                <span class="org">American Society of Civil Engineers (ASCE)</span><br>
-                <span class="role">Member</span>
-              </div>
-            </div>
-            <div class="membership-item">
-              <div>
-                <span class="org">Institute of Transportation Engineers (ITE)</span><br>
-                <span class="role">Member</span>
-              </div>
-            </div>
-            <div class="membership-item">
-              <div>
-                <span class="org">University of Mississippi SGA</span><br>
-                <span class="role">Graduate Senator – Civil Engineering · 2025–Present</span>
-              </div>
-            </div>
-
-            <h4 style="color:#ffbd39; margin-top:28px; margin-bottom:16px;">Honors &amp; Awards</h4>
-            <div class="cert-item">
-              <h4>TRB 2025 Paper Acceptance</h4>
-              <span>Transportation Research Board Annual Meeting · Winter Road Maintenance Study</span>
-            </div>
-            <div class="cert-item">
-              <h4>Merit-based Scholarship</h4>
-              <span>Top 3 each semester during undergraduate studies, Nepal</span>
-            </div>
-            <div class="cert-item">
-              <h4>Bureaucratic Society Welfare Award</h4>
-              <span>Ranked 74th in national scholarship competition, Nepal</span>
-            </div>
-          </div>
-        </div>
-        <br><br>
-      </div>
-    </section>
-
-    <!-- COUNTER -->
-    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-      <div class="container">
-        <div class="row d-md-flex align-items-center">
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="3">0</strong>
-                <span>Publications &amp; Reports</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="5">0</strong>
-                <span>Years of Experience</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="60">0</strong>
-                <span>AII Drawings Produced</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="1000">0</strong>
-                <span>Surveys Analyzed</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
-        <div class="row justify-content-center">
-          <div class="col-md-7 ftco-animate text-center">
-            <h2>Thanks for visiting my <span>Profile</span></h2>
-            <div class="heading"><h4>Making roads safer, one intersection at a time.</h4><br></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Contact</h1>
-            <h2 class="mb-4">Contact Me</h2>
-            <p>Open to research collaborations, academic inquiries, and professional opportunities in transportation safety and intersection design.</p>
-          </div>
-        </div>
-
-        <div class="row d-flex contact-info mb-5">
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div class="icon d-flex align-items-center justify-content-center"><span class="icon-map-signs"></span></div>
-              <h3 class="mb-4">Address</h3>
-              <p>Oxford, Mississippi</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div class="icon d-flex align-items-center justify-content-center"><span class="icon-phone2"></span></div>
-              <h3 class="mb-4">Phone</h3>
-              <p><a href="tel:+14352946220">+1 (435)-294-6220</a></p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div class="icon d-flex align-items-center justify-content-center"><span class="icon-paper-plane"></span></div>
-              <h3 class="mb-4">Email</h3>
-              <p><a href="mailto:skhanal1@go.olemiss.edu">skhanal1@go.olemiss.edu</a></p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div class="icon d-flex align-items-center justify-content-center"><span class="icon-globe"></span></div>
-              <h3 class="mb-4">Download CV</h3>
-              <p><a href="https://drive.google.com/file/d/1iYUTPi4nzWJFCQpZQQANS7f-cP5YbTVz/view?usp=sharing" target="_blank">Download</a></p>
-            </div>
-          </div>
-
-          <div class="container">
-            <br><br>
-            <div class="row justify-content-center">
-              <div class="col-md-7 ftco-animate text-center">
-                <h2>Have a <span>Question?</span> <a href="https://docs.google.com/forms/d/1ehlEGVP7B2ZMrD8C3InArm8P_e2BFGRjirK9bfVAZrs/edit" class="btn btn-primary py-3 px-5" target="_blank">Click Here</a></h2>
-              </div>
-            </div>
-            <br>
-            <ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-              <li class="ftco-animate normal-txt">Find me on &nbsp;</li>
-              <li class="ftco-animate"><a href="https://www.linkedin.com/in/shailendra-khanal/" target="_blank"><span class="icon-linkedin"></span></a></li>
+    <div class="resume-layout reveal">
+      <!-- Experience Column -->
+      <div>
+        <div class="resume-col-title">Research & Professional Experience</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-date">Aug 2025 – Present</div>
+            <div class="tl-role">Graduate Research & Teaching Assistant</div>
+            <div class="tl-org">University of Mississippi (Ole Miss) · Oxford, MS</div>
+            <ul class="tl-bullets">
+              <li>Leading NCHRP Project 17-131 — producing 60+ AII drawings with pedestrian figures and conflict point visualizations aligned with FHWA/AASHTO standards.</li>
+              <li>Developing Safety Surrogate Index (SSI) framework for national DOT guidance on AII configurations (RCUTs, MUTs, DDIs).</li>
+              <li>Teaching Assistant for CE 208 (Civil Engineering Graphics I); Graduate Senator via Ole Miss SGA.</li>
             </ul>
-            <br>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">Aug 2023 – Aug 2025</div>
+            <div class="tl-role">Graduate Research Assistant</div>
+            <div class="tl-org">Utah State University · Logan, UT</div>
+            <ul class="tl-bullets">
+              <li>Co-developed UDOT's Systemic Safety Tool for VRUs, improving risk detection by 25% using Python & ArcGIS Pro.</li>
+              <li>Analyzed 1,000+ surveys identifying service gaps across 20+ Utah counties, influencing UDOT snow removal policy.</li>
+              <li>Delivered engineering recommendations for 10+ high-risk pedestrian corridors supporting DOT grant applications.</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">Dec 2019 – Mar 2023</div>
+            <div class="tl-role">Civil Engineer – Transportation Specialist</div>
+            <div class="tl-org">Engineer's & Surveyor's Associates · Kathmandu, Nepal</div>
+            <ul class="tl-bullets">
+              <li>Designed roadway alignments using Civil 3D & OpenRoads, improving traffic efficiency 25% and reducing change orders 40%.</li>
+              <li>Conducted 10+ traffic impact studies reducing projected congestion by up to 18%.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="download-wrap">
+          <a href="https://drive.google.com/file/d/1iYUTPi4nzWJFCQpZQQANS7f-cP5YbTVz/view?usp=sharing" class="btn-primary" target="_blank">Download Full CV →</a>
+        </div>
+      </div>
+
+      <!-- Education Column -->
+      <div>
+        <div class="resume-col-title">Education</div>
+        <div class="edu-item">
+          <div class="edu-degree">PhD, Civil Engineering (Transportation Systems)</div>
+          <div class="edu-school">University of Mississippi (Ole Miss)</div>
+          <div class="edu-meta">Aug 2025 – Present · Oxford, MS · Research: AII Design & Safety</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">MS, Civil Engineering (Transportation)</div>
+          <div class="edu-school">Utah State University</div>
+          <div class="edu-meta">Aug 2023 – Aug 2025 · GPA: 3.75 / 4.0 · Logan, UT<br>Thesis: Public Satisfaction with Winter Road Maintenance in Utah<br>GRE: Quant 167 · Verbal 147</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">BE, Civil Engineering</div>
+          <div class="edu-school">Tribhuvan University (Kathmandu Engineering College)</div>
+          <div class="edu-meta">2015 – 2019 · Kathmandu, Nepal · 80.59% — Distinction</div>
+        </div>
+
+        <div class="resume-col-title" style="margin-top:40px;">Research Interests</div>
+        <div class="skill-chips" style="gap:8px;">
+          <span class="chip chip-solid">Alternative Intersections & Interchanges</span>
+          <span class="chip chip-solid">Transportation Safety</span>
+          <span class="chip chip-outline">GIS Crash Analysis</span>
+          <span class="chip chip-outline">Roadway Geometric Design</span>
+          <span class="chip chip-outline">Traffic Operations & HCM</span>
+          <span class="chip chip-outline">VRU Safety</span>
+          <span class="chip chip-outline">Winter Road Maintenance</span>
+          <span class="chip chip-outline">Transportation Data Analytics</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="section-label">Publications & Projects</div>
+    <div class="section-title">Research</div>
+    <div class="section-subtitle">Selected research projects, technical reports, and publications in transportation engineering and roadway safety.</div>
+
+    <div class="research-grid reveal">
+      <div class="research-card">
+        <div class="rc-image" style="background-image:url('images/proj_4.jpg');position:relative;background-size:cover;background-position:center;"><div style="position:absolute;inset:0;background:rgba(13,13,20,0.45);"></div><span class="rc-badge badge-blue" style="position:absolute;top:14px;left:14px;z-index:1;">Ongoing</span></div>
+        <div class="rc-body">
+          <div class="rc-title"><a href="#">NCHRP Project 17-131: National Guide for Alternative Intersections & Interchanges (AII)</a></div>
+          <div class="rc-desc">Developing a practitioner-focused national guide for AII configurations (RCUTs, MUTs, DDIs). Involves 60+ AutoCAD drawings, practitioner surveys, Safety Surrogate Index (SSI) framework, and systematic literature synthesis.</div>
+          <div class="rc-footer">Funded by National Cooperative Highway Research Program · University of Mississippi</div>
+        </div>
+      </div>
+
+      <div class="research-card">
+        <div class="rc-image" style="background-image:url('images/proj_3.jpg');position:relative;background-size:cover;background-position:center;"><div style="position:absolute;inset:0;background:rgba(13,13,20,0.45);"></div><span class="rc-badge badge-green" style="position:absolute;top:14px;left:14px;z-index:1;">Presented · TRB 2025</span></div>
+        <div class="rc-body">
+          <div class="rc-title"><a href="https://rip.trb.org/view/2262827" target="_blank">Analyzing Public Satisfaction with Winter Road Maintenance in Utah</a></div>
+          <div class="rc-desc">Presented at TRB Annual Meeting 2025. Examined public satisfaction and travel choices during UDOT winter maintenance across 20+ counties. Published as UDOT Technical Report UT-25.06 with Dr. Patrick A. Singleton, USU.</div>
+          <div class="rc-footer">Utah Department of Transportation · Utah State University · 2025</div>
+        </div>
+      </div>
+
+      <div class="research-card">
+        <div class="rc-image" style="background-image:url('images/proj_1.jpg');position:relative;background-size:cover;background-position:center;"><div style="position:absolute;inset:0;background:rgba(13,13,20,0.45);"></div><span class="rc-badge badge-amber" style="position:absolute;top:14px;left:14px;z-index:1;">Published · IJIERT 2020</span></div>
+        <div class="rc-body">
+          <div class="rc-title"><a href="https://d1wqtxts1xzle7.cloudfront.net/64236500/1596774873_Volume_7__Issue_8-libre.pdf" target="_blank">On-Street Parking in Inner Kathmandu: Parking Load and Efficiency of Motorcycles</a></div>
+          <div class="rc-desc">Published in the International Journal of Innovations in Engineering Research and Technology (IJIERT). Analyzed motorcycle parking patterns, congestion, and space utilization in Kathmandu Metropolitan City.</div>
+          <div class="rc-footer">International Journal of Innovations in Engineering Research & Technology · 2020</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="section-label">Licenses & Credentials</div>
+    <div class="section-title">Certifications</div>
+    <div class="section-subtitle">Professional engineering licenses, technical credentials, memberships, and academic honors.</div>
+
+    <div class="certs-grid reveal">
+      <div>
+        <div class="resume-col-title">Licenses & Certifications</div>
+        <div class="cert-card">
+          <div class="cert-name">Engineer Intern (EI) – Civil Engineering</div>
+          <div class="cert-issuer">Mississippi Board of Licensure · FE Civil Exam Passed, Mar 2024 (NCEES)</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-name">Civil Engineer (Category "A")</div>
+          <div class="cert-issuer">Nepal Engineering Council · Reg. No. 24560</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-name">Bentley Accredited Road Modeler: OpenRoads Modeling Core Skills</div>
+          <div class="cert-issuer">Bentley Systems · 2025</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-name">Bentley Accredited Road Designer: Road Design Modeling with OpenRoads Designer</div>
+          <div class="cert-issuer">Bentley Systems · 2024</div>
+        </div>
+        <div class="cert-card muted">
+          <div class="cert-name muted-text">PE Civil (Transportation) – In Preparation</div>
+          <div class="cert-issuer muted-text">Target: Summer 2026 · NCEES</div>
+        </div>
+
+        <div class="resume-col-title" style="margin-top:36px;">Professional Memberships</div>
+        <div class="member-item">
+          <div class="member-dot"></div>
+          <div>
+            <div class="member-name">American Society of Civil Engineers (ASCE)</div>
+            <div class="member-role">Member</div>
+          </div>
+        </div>
+        <div class="member-item">
+          <div class="member-dot"></div>
+          <div>
+            <div class="member-name">Institute of Transportation Engineers (ITE)</div>
+            <div class="member-role">Member</div>
+          </div>
+        </div>
+        <div class="member-item">
+          <div class="member-dot"></div>
+          <div>
+            <div class="member-name">University of Mississippi SGA</div>
+            <div class="member-role">Graduate Senator – Civil Engineering · 2025–Present</div>
           </div>
         </div>
       </div>
-    </section>
 
-    <footer class="ftco-footer ftco-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+      <div>
+        <div class="resume-col-title">Honors & Awards</div>
+        <div class="award-item">
+          <div class="award-icon">🏛️</div>
+          <div>
+            <div class="award-name">TRB 2025 Paper Acceptance</div>
+            <div class="award-desc">Transportation Research Board Annual Meeting · Winter Road Maintenance Study</div>
+          </div>
+        </div>
+        <div class="award-item">
+          <div class="award-icon">🎓</div>
+          <div>
+            <div class="award-name">Merit-based Scholarship</div>
+            <div class="award-desc">Top 3 ranking each semester during undergraduate studies, Nepal</div>
+          </div>
+        </div>
+        <div class="award-item">
+          <div class="award-icon">🏆</div>
+          <div>
+            <div class="award-name">Bureaucratic Society Welfare Award</div>
+            <div class="award-desc">Ranked 74th in national scholarship competition, Nepal</div>
+          </div>
+        </div>
+
+        <div class="resume-col-title" style="margin-top:36px;">Credential Roadmap</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;flex-shrink:0;">✓</div>
+            <div><div style="font-size:0.88rem;font-weight:600;color:var(--white);">FE Civil Exam</div><div style="font-size:0.75rem;color:var(--text-muted);">Passed · March 2024</div></div>
+          </div>
+          <div style="width:1px;height:16px;background:var(--border);margin-left:14px;"></div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--blue-light);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;flex-shrink:0;">→</div>
+            <div><div style="font-size:0.88rem;font-weight:600;color:var(--white);">PE Civil (Transportation)</div><div style="font-size:0.75rem;color:var(--text-muted);">Target: Summer 2026</div></div>
+          </div>
+          <div style="width:1px;height:16px;background:var(--border);margin-left:14px;"></div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;flex-shrink:0;color:var(--text-muted);">○</div>
+            <div><div style="font-size:0.88rem;font-weight:600;color:var(--text-muted);">PhD Defense</div><div style="font-size:0.75rem;color:var(--text-muted);">Planned · Future</div></div>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
+  </section>
 
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-label">Get in Touch</div>
+    <div class="section-title">Contact</div>
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  <script src="js/main.js"></script>
+    <div class="contact-grid reveal">
+      <div class="contact-cards">
+        <a href="mailto:skhanal1@go.olemiss.edu" class="contact-card">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">skhanal1@go.olemiss.edu</div>
+          </div>
+        </a>
+        <a href="tel:+14352946220" class="contact-card">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-label">Phone</div>
+            <div class="contact-value">+1 (435) 294-6220</div>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/shailendra-khanal/" class="contact-card" target="_blank">
+          <div class="contact-icon">💼</div>
+          <div>
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value">linkedin.com/in/shailendra-khanal</div>
+          </div>
+        </a>
+        <a href="https://orcid.org/0009-0008-0270-0699" class="contact-card" target="_blank">
+          <div class="contact-icon">🔬</div>
+          <div>
+            <div class="contact-label">ORCID</div>
+            <div class="contact-value">0009-0008-0270-0699</div>
+          </div>
+        </a>
+        <div class="contact-card" style="cursor:default;">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Location</div>
+            <div class="contact-value">Oxford, Mississippi</div>
+          </div>
+        </div>
+      </div>
 
-  </body>
+      <div class="contact-cta">
+        <h3>Let's Connect</h3>
+        <p>I'm open to research collaborations, academic discussions, and professional opportunities in transportation safety, intersection design, and traffic operations. Feel free to reach out!</p>
+        <a href="https://docs.google.com/forms/d/1ehlEGVP7B2ZMrD8C3InArm8P_e2BFGRjirK9bfVAZrs/edit" class="btn-primary" target="_blank">Send a Message →</a>
+        <div style="margin-top:28px; padding-top:28px; border-top:1px solid var(--border);">
+          <div style="font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Download</div>
+          <a href="https://drive.google.com/file/d/1iYUTPi4nzWJFCQpZQQANS7f-cP5YbTVz/view?usp=sharing" class="btn-secondary" target="_blank" style="font-size:0.85rem;">Download CV ↓</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">© <script>document.write(new Date().getFullYear())</script> Shailendra Khanal · <span style="color:var(--blue-glow);font-size:0.75rem;">🔴 University of Mississippi</span> · <a href="shailendrakhanal.github.io">shailendrakhanal.github.io</a></div>
+    <div class="footer-right">
+      <a href="#home" class="footer-link">Back to Top ↑</a>
+      <a href="https://www.linkedin.com/in/shailendra-khanal/" class="footer-link" target="_blank">LinkedIn</a>
+      <a href="https://orcid.org/0009-0008-0270-0699" class="footer-link" target="_blank">ORCID</a>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Active nav link
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--white)' : '';
+      });
+    });
+  </script>
+
+</body>
 </html>
