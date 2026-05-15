@@ -703,6 +703,86 @@
     .member-name { font-size: 0.9rem; font-weight: 500; color: var(--white); }
     .member-role { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
 
+    /* ── NEWS ── */
+    #news { background: rgba(13,13,20,0.78); }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+    }
+
+    .news-card {
+      background: rgba(206,17,38,0.05);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .news-card:hover { border-color: var(--blue-light); transform: translateY(-3px); }
+
+    .news-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(206,17,38,0.12);
+      border: 1px solid rgba(206,17,38,0.3);
+      color: var(--blue-glow);
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+    .news-badge::before {
+      content: '';
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--blue-glow);
+    }
+
+    .news-source {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .news-headline {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      color: var(--white);
+      line-height: 1.4;
+    }
+
+    .news-excerpt {
+      font-size: 0.85rem;
+      color: var(--text);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .news-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .news-read-more {
+      color: var(--blue-glow);
+      font-weight: 600;
+      font-size: 0.78rem;
+    }
+
     /* ── CONTACT ── */
     #contact { background: rgba(20,17,26,0.78); }
 
@@ -789,6 +869,7 @@
       <li><a href="#resume">Resume</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#certifications">Credentials</a></li>
+      <li><a href="#news">News</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="https://drive.google.com/file/d/1iYUTPi4nzWJFCQpZQQANS7f-cP5YbTVz/view?usp=sharing" class="nav-cta" target="_blank">Download CV</a></li>
     </ul>
@@ -1090,6 +1171,20 @@
       <div>
         <div class="resume-col-title">Honors & Awards</div>
         <div class="award-item">
+          <div class="award-icon">🏅</div>
+          <div>
+            <div class="award-name">DSITE Scholarship · $750</div>
+            <div class="award-desc">Deep South ITE (DSITE) · Awarded 2025 · Recognized at DSITE Winter Meeting, Pearl, MS</div>
+          </div>
+        </div>
+        <div class="award-item">
+          <div class="award-icon">🏅</div>
+          <div>
+            <div class="award-name">Gulf Region ITS Scholarship</div>
+            <div class="award-desc">Gulf Region Intelligent Transportation Society · Awarded 2025</div>
+          </div>
+        </div>
+        <div class="award-item">
           <div class="award-icon">🏛️</div>
           <div>
             <div class="award-name">TRB 2025 Paper Acceptance</div>
@@ -1129,6 +1224,33 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section id="news">
+    <div class="section-label">In the Media</div>
+    <div class="section-title">Lab News</div>
+    <div class="section-subtitle">Recent coverage, announcements, and highlights from our research group at the University of Mississippi.</div>
+
+    <div class="news-grid reveal">
+
+      <!-- Ole Miss Feature – May 2026 -->
+      <a href="https://olemiss.edu/news/2026/05/engineering-professor-developing-national-guide-for-safer-roadways/index.html" target="_blank" class="news-card">
+        <div>
+          <div class="news-badge">Featured Research</div>
+        </div>
+        <div class="news-source">University of Mississippi · May 14, 2026</div>
+        <div class="news-headline">Engineering Professor Developing National Guide for Safer Roadways</div>
+        <div class="news-excerpt">
+          The University of Mississippi highlights NCHRP Project 17-131, a $550,000 NCHRP-funded initiative led by Dr. Amir Molan to develop an updated national guide for Alternative Intersections and Interchanges (AII). The feature spotlights the research team — including Shailendra Khanal, whose doctoral dissertation focuses on the safety and operational performance of AII designs — and the project's goal of reducing the roughly 25% of fatal U.S. crashes that occur at or near intersections.
+        </div>
+        <div class="news-footer">
+          <span>University of Mississippi News</span>
+          <span class="news-read-more">Read Article →</span>
+        </div>
+      </a>
+
     </div>
   </section>
 
