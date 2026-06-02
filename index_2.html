@@ -854,182 +854,11 @@
     }
 
     /* ── SCROLL REVEAL ── */
-    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.75s cubic-bezier(0.16,1,0.3,1), transform 0.75s cubic-bezier(0.16,1,0.3,1); }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.75s cubic-bezier(0.16,1,0.3,1), transform 0.75s cubic-bezier(0.16,1,0.3,1); }
-    .reveal-left.visible { opacity: 1; transform: translateX(0); }
-    .reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.75s cubic-bezier(0.16,1,0.3,1), transform 0.75s cubic-bezier(0.16,1,0.3,1); }
-    .reveal-right.visible { opacity: 1; transform: translateX(0); }
-    .reveal-scale { opacity: 0; transform: scale(0.92); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
-    .reveal-scale.visible { opacity: 1; transform: scale(1); }
-    [data-delay="1"] { transition-delay: 0.1s !important; }
-    [data-delay="2"] { transition-delay: 0.2s !important; }
-    [data-delay="3"] { transition-delay: 0.3s !important; }
-    [data-delay="4"] { transition-delay: 0.4s !important; }
-    [data-delay="5"] { transition-delay: 0.5s !important; }
-
-    /* ── PARTICLES CANVAS ── */
-    #particles-canvas {
-      position: fixed; inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.45;
-    }
-
-    /* ── CURSOR GLOW ── */
-    .cursor-glow {
-      position: fixed;
-      width: 300px; height: 300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(206,17,38,0.07) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-      transform: translate(-50%, -50%);
-      transition: left 0.15s ease, top 0.15s ease;
-    }
-
-    /* ── NAV SCROLL STATE ── */
-    nav.scrolled {
-      background: rgba(10,8,15,0.97) !important;
-      box-shadow: 0 4px 30px rgba(0,0,0,0.4);
-    }
-
-    /* ── TYPEWRITER ── */
-    .typewriter-wrap { display: inline; }
-    .typewriter-text { border-right: 2px solid var(--blue-light); padding-right: 3px; animation: blink 0.75s step-end infinite; }
-    @keyframes blink { 0%,100% { border-color: var(--blue-light); } 50% { border-color: transparent; } }
-
-    /* ── COUNTER ANIMATION ── */
-    .stat-number[data-target] { transition: none; }
-
-    /* ── FLOATING BADGE ── */
-    .hero-photo-badge { animation: floatBadge 4s ease-in-out infinite; }
-    @keyframes floatBadge {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-
-    /* ── STAGGERED CARD ENTRANCE ── */
-    .research-card, .cert-card, .contact-card, .edu-item {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1),
-                  transform 0.6s cubic-bezier(0.16,1,0.3,1),
-                  border-color 0.2s,
-                  background 0.2s;
-    }
-    .research-card.in, .cert-card.in, .contact-card.in, .edu-item.in {
-      opacity: 1; transform: translateY(0);
-    }
-
-    /* ── TIMELINE DOT PULSE ON SCROLL ── */
-    .tl-item.in::before {
-      animation: dotPop 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
-    }
-    @keyframes dotPop {
-      from { transform: scale(0); opacity: 0; }
-      to   { transform: scale(1); opacity: 1; }
-    }
-
-    /* ── SKILL CHIP WAVE ── */
-    .chip {
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s, border-color 0.2s;
-    }
-    .chip.in { opacity: 1; transform: translateY(0); }
-    .chip:hover { transform: translateY(-3px) scale(1.06) !important; box-shadow: 0 4px 16px rgba(206,17,38,0.25); }
-
-    /* ── SECTION TITLE UNDERLINE DRAW ── */
-    .section-title { position: relative; display: inline-block; }
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -6px; left: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--blue-light), transparent);
-      width: 0;
-      transition: width 0.8s cubic-bezier(0.16,1,0.3,1);
-    }
-    .section-title.line-drawn::after { width: 60%; }
-
-    /* ── HERO GRID ANIMATED ── */
-    .hero-grid-bg {
-      animation: gridShift 20s linear infinite;
-    }
-    @keyframes gridShift {
-      from { background-position: 0 0; }
-      to   { background-position: 60px 60px; }
-    }
-
-    /* ── GLITCH ON NAME HOVER ── */
-    .hero-name:hover { cursor: default; }
-    .hero-name:hover em {
-      animation: glitch 0.4s steps(2) both;
-    }
-    @keyframes glitch {
-      0%   { text-shadow: -2px 0 var(--blue-glow), 2px 0 var(--accent); clip-path: inset(0 0 85% 0); }
-      25%  { text-shadow: 2px 0 var(--blue-glow), -2px 0 var(--accent); clip-path: inset(40% 0 40% 0); }
-      50%  { text-shadow: -2px 0 var(--blue-glow), 2px 0 var(--accent); clip-path: inset(70% 0 10% 0); }
-      75%  { text-shadow: 2px 0 var(--blue-glow), -2px 0 var(--accent); clip-path: inset(10% 0 60% 0); }
-      100% { text-shadow: none; clip-path: none; }
-    }
-
-    /* ── NEWS CARD SHIMMER ── */
-    .news-card { position: relative; overflow: hidden; }
-    .news-card::after {
-      content: '';
-      position: absolute;
-      top: 0; left: -100%;
-      width: 60%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent);
-      transition: left 0.5s ease;
-    }
-    .news-card:hover::after { left: 150%; }
-
-    /* ── PROGRESS BARS FOR SKILLS ── */
-    .skill-bar-wrap { margin-top: 8px; }
-    .skill-bar-track { height: 3px; background: rgba(206,17,38,0.12); border-radius: 2px; overflow: hidden; }
-    .skill-bar-fill {
-      height: 100%;
-      border-radius: 2px;
-      background: linear-gradient(90deg, var(--blue), var(--blue-glow));
-      width: 0;
-      transition: width 1.2s cubic-bezier(0.16,1,0.3,1);
-    }
-
-    /* ── MAGNETIC BUTTON ── */
-    .btn-primary, .btn-secondary {
-      transition: background 0.2s, transform 0.15s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s, border-color 0.2s !important;
-    }
-    .btn-primary:hover { box-shadow: 0 8px 30px rgba(206,17,38,0.35) !important; }
-
-    /* ── CONTACT CARD SLIDE ── */
-    .contact-card:hover { transform: translateX(6px) !important; }
-
-    /* ── HERO GLOW PULSE ── */
-    .hero-glow {
-      animation: glowPulse 6s ease-in-out infinite;
-    }
-    @keyframes glowPulse {
-      0%, 100% { opacity: 0.8; transform: scale(1); }
-      50%       { opacity: 1;   transform: scale(1.15); }
-    }
-
-    /* ── SECTION DIVIDER ── */
-    section + section::before {
-      content: '';
-      display: block;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(206,17,38,0.15), transparent);
-      margin-bottom: 0;
-    }
   </style>
 </head>
 <body>
-
-  <canvas id="particles-canvas"></canvas>
-  <div class="cursor-glow" id="cursor-glow"></div>
 
   <!-- NAV -->
   <nav>
@@ -1093,9 +922,8 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="section-label">About Me</div>
-    <div class="about-grid">
-      
-      <div class="about-photo-wrap reveal-left">
+    <div class="about-grid reveal">
+      <div class="about-photo-wrap">
         <img src="images/about-me.png" class="about-photo" alt="Shailendra Khanal" style="width:260px;height:260px;border-radius:50%;display:block;object-fit:cover;object-position:top center;border:4px solid rgba(206,17,38,0.4);box-shadow:0 0 0 8px rgba(206,17,38,0.08);margin:0 auto 20px auto;">
         <div class="about-info-card">
           <div class="card-label">Current Position</div>
@@ -1103,7 +931,7 @@
           <div class="card-sub">University of Mississippi</div>
         </div>
       </div>
-      <div class="about-text reveal-right">
+      <div class="about-text">
         <h3>Transportation Safety Researcher & Engineer-in-Training</h3>
         <p>I am a PhD student in Transportation Engineering at the University of Mississippi (Ole Miss), working as a Graduate Research and Teaching Assistant under Dr. Amir M. Molan. My primary research focuses on NCHRP Project 17-131 — developing a national practitioner guide for Alternative Intersections and Interchanges (AII).</p>
         <p>I hold a Master's in Transportation Engineering from Utah State University (GPA: 3.75) and bring experience across two countries — from UDOT-funded VRU safety research in Utah to roadway design projects in Nepal.</p>
@@ -1176,9 +1004,9 @@
     <div class="section-title">Resume</div>
     <div class="section-subtitle">PhD researcher and EIT with expertise spanning transportation safety, GIS crash analysis, alternative intersection design, and roadway engineering across the U.S. and Nepal.</div>
 
-    <div class="resume-layout">
+    <div class="resume-layout reveal">
       <!-- Experience Column -->
-      <div class="reveal-left">
+      <div>
         <div class="resume-col-title">Research & Professional Experience</div>
         <div class="timeline">
           <div class="tl-item">
@@ -1217,7 +1045,7 @@
       </div>
 
       <!-- Education Column -->
-      <div class="reveal-right">
+      <div>
         <div class="resume-col-title">Education</div>
         <div class="edu-item">
           <div class="edu-degree">PhD, Civil Engineering (Transportation Systems)</div>
@@ -1256,7 +1084,7 @@
     <div class="section-title">Research</div>
     <div class="section-subtitle">Selected research projects, technical reports, and publications in transportation engineering and roadway safety.</div>
 
-    <div class="research-grid">
+    <div class="research-grid reveal">
       <div class="research-card">
         <div class="rc-image" style="background-image:url('images/proj_4.png');position:relative;background-size:cover;background-position:center;"><div style="position:absolute;inset:0;background:rgba(13,13,20,0.45);"></div><span class="rc-badge badge-blue" style="position:absolute;top:14px;left:14px;z-index:1;">Ongoing</span></div>
         <div class="rc-body">
@@ -1292,7 +1120,7 @@
     <div class="section-title">Certifications</div>
     <div class="section-subtitle">Professional engineering licenses, technical credentials, memberships, and academic honors.</div>
 
-    <div class="certs-grid">
+    <div class="certs-grid reveal">
       <div>
         <div class="resume-col-title">Licenses & Certifications</div>
         <div class="cert-card">
@@ -1405,7 +1233,7 @@
     <div class="section-title">Lab News</div>
     <div class="section-subtitle">Recent coverage, announcements, and highlights from our research group at the University of Mississippi.</div>
 
-    <div class="news-grid">
+    <div class="news-grid reveal">
 
       <!-- Ole Miss Feature – May 2026 -->
       <a href="https://olemiss.edu/news/2026/05/engineering-professor-developing-national-guide-for-safer-roadways/index.html" target="_blank" class="news-card">
@@ -1431,7 +1259,7 @@
     <div class="section-label">Get in Touch</div>
     <div class="section-title">Contact</div>
 
-    <div class="contact-grid">
+    <div class="contact-grid reveal">
       <div class="contact-cards">
         <a href="mailto:skhanal1@go.olemiss.edu" class="contact-card">
           <div class="contact-icon">✉️</div>
@@ -1493,251 +1321,23 @@
   </footer>
 
   <script>
-    // ── PARTICLES ──────────────────────────────────────────────
-    const canvas = document.getElementById('particles-canvas');
-    const ctx = canvas.getContext('2d');
-    let W, H, particles = [];
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
 
-    function resizeCanvas() {
-      W = canvas.width  = window.innerWidth;
-      H = canvas.height = window.innerHeight;
-    }
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    function randomParticle() {
-      return {
-        x: Math.random() * W,
-        y: Math.random() * H,
-        r: Math.random() * 1.5 + 0.3,
-        dx: (Math.random() - 0.5) * 0.3,
-        dy: (Math.random() - 0.5) * 0.3,
-        alpha: Math.random() * 0.5 + 0.1,
-        color: Math.random() > 0.6 ? '206,17,38' : '65,105,168'
-      };
-    }
-    for (let i = 0; i < 80; i++) particles.push(randomParticle());
-
-    function drawParticles() {
-      ctx.clearRect(0, 0, W, H);
-      particles.forEach(p => {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${p.color},${p.alpha})`;
-        ctx.fill();
-        p.x += p.dx; p.y += p.dy;
-        if (p.x < 0 || p.x > W) p.dx *= -1;
-        if (p.y < 0 || p.y > H) p.dy *= -1;
-      });
-      // Draw lines between nearby particles
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
-          if (dist < 120) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(206,17,38,${0.06 * (1 - dist/120)})`;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
-        }
-      }
-      requestAnimationFrame(drawParticles);
-    }
-    drawParticles();
-
-    // ── CURSOR GLOW ──────────────────────────────────────────────
-    const glow = document.getElementById('cursor-glow');
-    document.addEventListener('mousemove', e => {
-      glow.style.left = e.clientX + 'px';
-      glow.style.top  = e.clientY + 'px';
-    });
-
-    // ── NAV SCROLL ───────────────────────────────────────────────
-    const nav = document.querySelector('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
-    });
-
-    // ── TYPEWRITER ───────────────────────────────────────────────
-    const phrases = [
-      'Transportation Safety Researcher',
-      'PhD Student · Ole Miss',
-      'Engineer-in-Training (EIT)',
-      'NCHRP 17-131 Lead Researcher',
-      'GIS & Crash Analytics Expert'
-    ];
-    const titleEl = document.querySelector('.hero-title');
-    if (titleEl) {
-      let pi = 0, ci = 0, deleting = false;
-      const span = document.createElement('span');
-      span.className = 'typewriter-text';
-      titleEl.innerHTML = '<strong>PhD Researcher</strong> · <span class="typewriter-text"></span> · University of Mississippi';
-      const tw = titleEl.querySelector('.typewriter-text');
-      function type() {
-        const current = phrases[pi];
-        if (!deleting) {
-          tw.textContent = current.slice(0, ++ci);
-          if (ci === current.length) { deleting = true; setTimeout(type, 1800); return; }
-        } else {
-          tw.textContent = current.slice(0, --ci);
-          if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
-        }
-        setTimeout(type, deleting ? 40 : 75);
-      }
-      setTimeout(type, 1200);
-    }
-
-    // ── COUNTER ANIMATION ────────────────────────────────────────
-    function animateCounter(el, target, suffix = '') {
-      const isK = target.toString().includes('K');
-      const numTarget = isK ? parseInt(target) * 1000 : parseInt(target);
-      let start = null;
-      const duration = 1800;
-      function step(ts) {
-        if (!start) start = ts;
-        const progress = Math.min((ts - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        const val = Math.round(eased * numTarget);
-        el.childNodes[0].textContent = isK ? (val >= 1000 ? '1K' : val) : val;
-        if (progress < 1) requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-    }
-
-    // ── SCROLL REVEAL ENGINE ─────────────────────────────────────
-    const revealSelectors = '.reveal, .reveal-left, .reveal-right, .reveal-scale';
-    const staggerSelectors = '.research-card, .cert-card, .contact-card, .edu-item, .tl-item';
-
-    const obsReveal = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          // Draw title underline
-          const title = e.target.closest('section')?.querySelector('.section-title');
-          if (title) title.classList.add('line-drawn');
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll(revealSelectors).forEach(el => obsReveal.observe(el));
-
-    // Section title underlines
-    const obsTitles = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('line-drawn'); });
-    }, { threshold: 0.5 });
-    document.querySelectorAll('.section-title').forEach(el => obsTitles.observe(el));
-
-    // Stagger cards
-    const obsStagger = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          const siblings = e.target.parentElement.querySelectorAll(staggerSelectors);
-          siblings.forEach((s, i) => {
-            setTimeout(() => s.classList.add('in'), i * 110);
-          });
-          obsStagger.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-    document.querySelectorAll(staggerSelectors).forEach((el, i) => {
-      if (i === 0) obsStagger.observe(el);
-    });
-
-    // Stagger by parent group
-    document.querySelectorAll('.research-grid, .certs-grid, .contact-cards, .timeline').forEach(group => {
-      const cards = group.querySelectorAll('.research-card, .cert-card, .contact-card, .tl-item, .edu-item');
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            cards.forEach((c, i) => setTimeout(() => c.classList.add('in'), i * 100));
-            obs.disconnect();
-          }
-        });
-      }, { threshold: 0.08 });
-      if (cards.length) obs.observe(group);
-    });
-
-    // edu-item stagger
-    document.querySelectorAll('.resume-layout').forEach(group => {
-      const items = group.querySelectorAll('.edu-item');
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            items.forEach((c, i) => setTimeout(() => c.classList.add('in'), i * 120));
-            obs.disconnect();
-          }
-        });
-      }, { threshold: 0.08 });
-      if (items.length) obs.observe(group);
-    });
-
-    // Chip wave
-    document.querySelectorAll('.skill-chips').forEach(wrap => {
-      const chips = wrap.querySelectorAll('.chip');
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            chips.forEach((c, i) => setTimeout(() => c.classList.add('in'), i * 60));
-            obs.disconnect();
-          }
-        });
-      }, { threshold: 0.3 });
-      obs.observe(wrap);
-    });
-
-    // Counters
-    const obsCounters = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          const nums = e.target.querySelectorAll('.stat-number');
-          nums.forEach(el => {
-            const raw = el.textContent.trim();
-            const suffix = el.querySelector('span') ? el.querySelector('span').textContent : '';
-            animateCounter(el, raw.replace(suffix,'').trim());
-          });
-          obsCounters.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.5 });
-    const statsEl = document.querySelector('.hero-stats');
-    if (statsEl) obsCounters.observe(statsEl);
-
-    // ── ACTIVE NAV LINK ──────────────────────────────────────────
+    // Active nav link
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-links a');
     window.addEventListener('scroll', () => {
       let current = '';
-      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
       navLinks.forEach(a => {
         a.style.color = a.getAttribute('href') === '#' + current ? 'var(--white)' : '';
       });
-    }, { passive: true });
-
-    // ── MAGNETIC BUTTONS ─────────────────────────────────────────
-    document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta').forEach(btn => {
-      btn.addEventListener('mousemove', e => {
-        const r = btn.getBoundingClientRect();
-        const x = (e.clientX - r.left - r.width  / 2) * 0.18;
-        const y = (e.clientY - r.top  - r.height / 2) * 0.18;
-        btn.style.transform = `translate(${x}px, ${y}px) translateY(-2px)`;
-      });
-      btn.addEventListener('mouseleave', () => {
-        btn.style.transform = '';
-      });
     });
-
-    // ── PAGE LOAD PROGRESS BAR ───────────────────────────────────
-    const bar = document.createElement('div');
-    bar.style.cssText = 'position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--blue-glow));z-index:9999;width:0;transition:width 0.3s ease;';
-    document.body.appendChild(bar);
-    window.addEventListener('scroll', () => {
-      const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
-      bar.style.width = pct + '%';
-    }, { passive: true });
-
   </script>
 
 </body>
